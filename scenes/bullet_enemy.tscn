@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://7c1p06yls7ec"]
+
+[ext_resource type="Script" path="res://script/bullet_enemy.gd" id="1_sdabt"]
+[ext_resource type="Texture2D" uid="uid://brwt8tg7ry6nn" path="res://addons/bullet.png" id="2_tqxh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10ipr"]
+size = Vector2(7.38087, 10.718)
+
+[node name="Bullet" type="Area2D" groups=["Bullet_enemy"]]
+scale = Vector2(1.49397, 1.49397)
+script = ExtResource("1_sdabt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.000130383, -0.344006)
+rotation = -1.55686
+shape = SubResource("RectangleShape2D_10ipr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.12558, 1.12558)
+texture = ExtResource("2_tqxh5")
+offset = Vector2(0.533333, 10.6667)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0574385, 9.61194)
+rotation = -1.55686
+shape = SubResource("RectangleShape2D_10ipr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-0.0575689, 9.95595)
+scale = Vector2(1.12558, 1.12558)
+texture = ExtResource("2_tqxh5")
+offset = Vector2(0.533333, 10.6667)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0574385, -10.4688)
+rotation = -1.55686
+shape = SubResource("RectangleShape2D_10ipr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-0.0575689, -10.1248)
+scale = Vector2(1.12558, 1.12558)
+texture = ExtResource("2_tqxh5")
+offset = Vector2(0.533333, 10.6667)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

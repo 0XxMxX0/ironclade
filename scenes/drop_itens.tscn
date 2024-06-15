@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dge4ou2ri5nnk"]
+
+[ext_resource type="Script" path="res://script/drop_itens.gd" id="1_4t00f"]
+[ext_resource type="Texture2D" uid="uid://daabrtkghkj6r" path="res://addons/Rifle.png" id="2_fdbmb"]
+[ext_resource type="AudioStream" uid="uid://cqhh5ees6dxmd" path="res://audio/powerUp.wav" id="3_ojsdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8h6y"]
+size = Vector2(9.66241, 1.52565)
+
+[node name="drop_itens" type="Area2D"]
+scale = Vector2(2.49107, 2.49107)
+script = ExtResource("1_4t00f")
+
+[node name="texture_drop_itens" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+scale = Vector2(0.45292, 0.45292)
+texture = ExtResource("2_fdbmb")
+
+[node name="collsiiton" type="CollisionShape2D" parent="."]
+position = Vector2(0.499992, 0.5)
+scale = Vector2(2.00284, 7.21004)
+shape = SubResource("RectangleShape2D_c8h6y")
+
+[node name="drop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ojsdp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

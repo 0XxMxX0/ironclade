@@ -1,0 +1,230 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmrvunnfhar66"]
+
+[ext_resource type="Script" path="res://script/Player.gd" id="1_qseyr"]
+[ext_resource type="Texture2D" uid="uid://drvh6opmn5hep" path="res://addons/robozin_run.png" id="2_q0pwu"]
+[ext_resource type="Texture2D" path="res://addons/Tiles/tile_0043.png" id="3_pcafh"]
+[ext_resource type="Texture2D" uid="uid://by6a5evypuqo1" path="res://addons/weapon.png" id="4_iya7d"]
+[ext_resource type="Script" path="res://scenes/Weapon_hand.gd" id="6_3ygxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kwx3"]
+size = Vector2(10, 6)
+
+[sub_resource type="Animation" id="Animation_llj7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_q0pwu")]
+}
+
+[sub_resource type="Animation" id="Animation_mj1q8"]
+resource_name = "attack"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_q0pwu")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hand")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_bullet"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_rguuk"]
+resource_name = "run"
+length = 0.32
+loop_mode = 1
+step = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_q0pwu")]
+}
+
+[sub_resource type="Animation" id="Animation_7giml"]
+resource_name = "idle"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_q0pwu")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jpkt"]
+_data = {
+"RESET": SubResource("Animation_llj7x"),
+"attack": SubResource("Animation_mj1q8"),
+"idle": SubResource("Animation_7giml"),
+"run": SubResource("Animation_rguuk")
+}
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(7.74105, 7.74105)
+script = ExtResource("1_qseyr")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_0kwx3")
+debug_color = Color(0.557024, 0.554829, 0.24206, 0.42)
+
+[node name="texture" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.32527, -16.0185)
+texture = ExtResource("2_q0pwu")
+hframes = 4
+
+[node name="Tile0043" type="Sprite2D" parent="texture"]
+position = Vector2(118, 7)
+scale = Vector2(2.85938, 2.85938)
+texture = ExtResource("3_pcafh")
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4jpkt")
+}
+autoplay = "idle"
+
+[node name="Hand" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-0.90427, -4.13381)
+script = ExtResource("6_3ygxh")
+
+[node name="weapon" type="Sprite2D" parent="Hand"]
+position = Vector2(12.2722, -1.55017)
+texture = ExtResource("4_iya7d")
+
+[connection signal="animation_finished" from="animation" to="Hand" method="_on_animation_animation_finished"]

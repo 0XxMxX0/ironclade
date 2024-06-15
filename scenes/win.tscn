@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnk6eq8g7bj0a"]
+
+[ext_resource type="Script" path="res://script/win.gd" id="1_tya6p"]
+[ext_resource type="AudioStream" uid="uid://cw83rj4iwnie4" path="res://audio/Video_sem_titulo_2_online-audio-converter.com.mp3" id="2_qfkob"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_71vbk"]
+line_spacing = -3.0
+font_color = Color(0.603922, 1, 0.4, 1)
+
+[sub_resource type="Animation" id="Animation_mu042"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["APERTE R PARA REINICIAR"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:label_settings:font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_dlv8i"]
+resource_name = "TEXT"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["APERTE R PARA REINICIAR", "APERTE R PARA REINICIAR"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:label_settings:font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [20, 18]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv0g3"]
+_data = {
+"RESET": SubResource("Animation_mu042"),
+"TEXT": SubResource("Animation_dlv8i")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ggtnv"]
+font_color = Color(0, 0, 0.137255, 1)
+
+[node name="game-over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tya6p")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 650.0
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -97.0
+offset_right = 132.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PARABÉNS! 
+Protótipo 000A acaba de concluir 
+o primeiro estágio."
+label_settings = SubResource("LabelSettings_71vbk")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -72.0
+offset_right = 105.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "APERTE R PARA REINICIAR"
+label_settings = SubResource("LabelSettings_71vbk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+"": SubResource("AnimationLibrary_qv0g3")
+}
+autoplay = "TEXT"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -134.0
+offset_right = -4.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Programador
+Nunes 
+Artista
+Nate
+Audio/UI
+DevLofi"
+label_settings = SubResource("LabelSettings_71vbk")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qfkob")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("2_qfkob")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 222.0
+offset_right = 838.0
+offset_bottom = 245.0
+label_settings = SubResource("LabelSettings_ggtnv")
