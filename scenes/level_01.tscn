@@ -1,13 +1,13 @@
 [gd_scene load_steps=18 format=3 uid="uid://fu1n63ipo2y7"]
 
 [ext_resource type="PackedScene" uid="uid://cmrvunnfhar66" path="res://scenes/player.tscn" id="1_jmqye"]
-[ext_resource type="Texture2D" uid="uid://lo3vik53mqqi" path="res://addons/tiles/cenario.png" id="3_52pih"]
+[ext_resource type="Texture2D" uid="uid://lo3vik53mqqi" path="res://assents/tilesets/cenario.png" id="3_52pih"]
 [ext_resource type="Script" path="res://script/Wall_up.gd" id="3_70elf"]
-[ext_resource type="Texture2D" uid="uid://d1lvy7v4rurk0" path="res://addons/tiles/porta_aberta.png" id="4_timlh"]
-[ext_resource type="Texture2D" uid="uid://cbk8gppwth0uv" path="res://addons/tiles/porta_abrindo.png" id="5_00njp"]
+[ext_resource type="Texture2D" uid="uid://d1lvy7v4rurk0" path="res://assents/tilesets/porta_aberta.png" id="4_timlh"]
+[ext_resource type="Texture2D" uid="uid://cbk8gppwth0uv" path="res://assents/tilesets/porta_abrindo.png" id="5_00njp"]
 [ext_resource type="PackedScene" uid="uid://dge4ou2ri5nnk" path="res://scenes/drop_itens.tscn" id="10_82053"]
 [ext_resource type="Script" path="res://script/Control.gd" id="15_f6b3j"]
-[ext_resource type="Texture2D" uid="uid://f5m6wmmmes6r" path="res://addons/monitor_de_upgrade.png" id="16_y25lx"]
+[ext_resource type="Texture2D" uid="uid://f5m6wmmmes6r" path="res://assents/hubs/monitor_de_upgrade.png" id="16_y25lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt1ja"]
 size = Vector2(286.5, 95.5)

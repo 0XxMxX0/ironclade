@@ -22,7 +22,7 @@ HandBag="*res://script/player/HandBag.gd"
 [display]
 
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://addons/mira.png"
+mouse_cursor/custom_image="res://assents/mira.png"
 
 [input]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://cug08mbvprqch"]
 
 [ext_resource type="Script" path="res://script/Enemy.gd" id="1_5lk74"]
-[ext_resource type="Texture2D" uid="uid://byn1n3g7peja1" path="res://addons/explosao.png" id="2_ree32"]
+[ext_resource type="Texture2D" uid="uid://byn1n3g7peja1" path="res://assents/effects/explosao.png" id="2_ree32"]
 [ext_resource type="Script" path="res://script/follow_player.gd" id="3_jp0sq"]
 [ext_resource type="AudioStream" uid="uid://xmc3w3hpwqtl" path="res://audio/explosion.wav" id="4_7tsux"]
-[ext_resource type="Texture2D" uid="uid://dtltvsgkimax3" path="res://addons/enemies/run_horizoltal.png" id="5_vl4xf"]
-[ext_resource type="Texture2D" uid="uid://ctydqpyh4lutg" path="res://addons/weapons/disparo_enemy2.png" id="6_6kmja"]
+[ext_resource type="Texture2D" uid="uid://dtltvsgkimax3" path="res://assents/animation/enemies/run_horizoltal.png" id="5_vl4xf"]
+[ext_resource type="Texture2D" uid="uid://ctydqpyh4lutg" path="res://assents/weapons/bullets/disparo_enemy2.png" id="6_6kmja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0hxd"]
 size = Vector2(10.8178, 22.2204)

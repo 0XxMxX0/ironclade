@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/game_over.gd" id="1_bwnj6"]
 [ext_resource type="AudioStream" uid="uid://cw83rj4iwnie4" path="res://audio/Video_sem_titulo_2_online-audio-converter.com.mp3" id="1_m7qrd"]
-[ext_resource type="Texture2D" uid="uid://cq8juobjo80eb" path="res://addons/deadescream.png" id="2_k83xv"]
+[ext_resource type="Texture2D" uid="uid://cq8juobjo80eb" path="res://assents/hubs/deadescream.png" id="2_k83xv"]
 
 [sub_resource type="Animation" id="Animation_lxt5m"]
 resource_name = "morreu"

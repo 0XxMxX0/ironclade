@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 #Propriedades gerais do player
 var health: int = 20
-var speed: float = 2
+var speed: float = 1.5
 
 #Propriedades de movimentação
 var input_vector: Vector2 = Vector2.ZERO

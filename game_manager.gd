@@ -16,13 +16,37 @@ var group_1 = 3
 var group_2 = 4
 var tutorial = true
 
-##Mecanica de atribuição de atributos
-var player_add_attribute = null
+#GERENCIAMENTO DE POWER-UPS
+var power_up = {}
+
 ##Mecanica de troca de arma
 var player_weapon_changer = null
-
 
 func _process(delta):
 	if group_2 <= 0:
 		get_tree().change_scene_to_file("res://scenes/win.tscn")
 		print('acabou o jogo')
+		
+	#Controle e gerenciamento dos atributos do player
+	control_attribute()
+	
+	#Controle de powerUps
+	add_power_up()
+
+func control_attribute():
+	if len(HandBag.player_items['up']) != 0:
+		for attribute in HandBag.player_items['up']:
+			if attribute['att'] == 'velocidade':
+				player.speed = 2
+
+func set_power_up(name, sprite, category):
+	pass
+	#power_up.append({
+		#'name': name,
+		#'sprite': sprite,
+		#'category': category
+	#})
+	
+func add_power_up():
+	set_power_up('rifle', 'res://assents/power_ups/Rifle.png', 'weapon')
+	set_power_up('velocity', 'res://assents/power_ups/velocidade.png', 'attribute')
