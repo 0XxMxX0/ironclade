@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xokr0cl8vjbe"
-path="res://.godot/imported/afk.png-06c3298a357da9d60e4ea49a301c6486.ctex"
+uid="uid://cfpfm15r0p1d3"
+path="res://.godot/imported/rolamento_baixo.png-8477e0b9d501351368b67fe5d50cfeba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/animation/player/afk.png"
-dest_files=["res://.godot/imported/afk.png-06c3298a357da9d60e4ea49a301c6486.ctex"]
+source_file="res://assents/animation/player/rolamento_baixo.png"
+dest_files=["res://.godot/imported/rolamento_baixo.png-8477e0b9d501351368b67fe5d50cfeba.ctex"]
 
 [params]
 

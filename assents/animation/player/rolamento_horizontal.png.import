@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daabrtkghkj6r"
-path="res://.godot/imported/Rifle.png-6b2916363f346127585cb9956e800c9b.ctex"
+uid="uid://dsbdawo24inu6"
+path="res://.godot/imported/rolamento_horizontal.png-ab441332fe0c94538a119c81d9dd2c19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/power_ups/Rifle.png"
-dest_files=["res://.godot/imported/Rifle.png-6b2916363f346127585cb9956e800c9b.ctex"]
+source_file="res://assents/animation/player/rolamento_horizontal.png"
+dest_files=["res://.godot/imported/rolamento_horizontal.png-ab441332fe0c94538a119c81d9dd2c19.ctex"]
 
 [params]
 

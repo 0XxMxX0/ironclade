@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daabrtkghkj6r"
-path="res://.godot/imported/Rifle.png-6b2916363f346127585cb9956e800c9b.ctex"
+uid="uid://73gr81dlk6i1"
+path="res://.godot/imported/caindo.png-a9fa4122db921c876683835c7a5024a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/power_ups/Rifle.png"
-dest_files=["res://.godot/imported/Rifle.png-6b2916363f346127585cb9956e800c9b.ctex"]
+source_file="res://assents/animation/player/caindo.png"
+dest_files=["res://.godot/imported/caindo.png-a9fa4122db921c876683835c7a5024a1.ctex"]
 
 [params]
 

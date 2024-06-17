@@ -7,6 +7,7 @@ var speed: float = 1.5
 
 #Propriedades de movimentação
 var input_vector: Vector2 = Vector2.ZERO
+var direction_player
 
 ##Propriedades de corrida
 var is_running: bool = false
@@ -52,9 +53,8 @@ func _physics_process(delta) -> void:
 func read_input() -> void:
 	if GameManager.game_over: return
 	
-	if Input.is_action_just_pressed("dodge"):
+	if Input.is_action_just_pressed("dodge") and input_vector != Vector2(0,0):
 		animation.play("dodge")
-		input_vector = get_direction_mouse()
 		GameManager.player_is_dodging = true
 	
 	#print(GameManager.player_is_dodging)
@@ -77,7 +77,7 @@ func play_run_idle_animation() -> void:
 				animation.play("run_down")
 				is_running = false
 			else:
-				animation.play("run")
+				animation.play("run_horizontal")
 				is_running = false
 		else:
 			is_running = false
@@ -90,12 +90,16 @@ func play_run_idle_animation() -> void:
 func rotate_sprite() -> void:
 	if GameManager.game_over: return
 	#Girando o sprite de acordo com o mouse
+	
 	if get_direction_mouse().x > 0:
 		sprite.flip_h = false
+		direction_player = 'horizontal r'
+		animation.play("")
 		sprite.position.x = 2.325
 		%gun_barrel.position.y = 0.388
 	elif get_direction_mouse().x < 0:
 		sprite.flip_h = true
+		direction_player = 'horizontal l'
 		sprite.position.x = -3.617
 		%gun_barrel.position.y = -1
 

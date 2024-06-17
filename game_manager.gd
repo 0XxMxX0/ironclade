@@ -38,7 +38,6 @@ var power_ups = {
 
 ##Mecanica de troca de arma
 var player_weapon_changer: bool = false
-
 var weapons = {
 	"pistola":{
 		"sprites": {

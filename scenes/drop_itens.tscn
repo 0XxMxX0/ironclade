@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dge4ou2ri5nnk"]
 
 [ext_resource type="Script" path="res://script/drop_itens.gd" id="1_4t00f"]
-[ext_resource type="Texture2D" uid="uid://daabrtkghkj6r" path="res://assents/power_ups/rifle.png" id="2_fdbmb"]
+[ext_resource type="Texture2D" uid="uid://daabrtkghkj6r" path="res://assents/power_ups/Rifle.png" id="2_fdbmb"]
 [ext_resource type="AudioStream" uid="uid://cqhh5ees6dxmd" path="res://audio/powerUp.wav" id="3_ojsdp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8h6y"]

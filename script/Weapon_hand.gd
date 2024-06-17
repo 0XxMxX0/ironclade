@@ -15,7 +15,6 @@ var attaking_cooldown = 0
 #Animação da arma atual
 @onready var animation = $animation
 
-
 func _ready():
 	weapon = GameManager.weapons[HandBag.player_items['weapon']]
 	ammunition = weapon['attribute']['ammunition']
@@ -23,8 +22,7 @@ func _ready():
 	
 func _process(delta):
 	
-	print(GameManager.player_weapon_changer)
-	
+	#print(GameManager.player_weapon_changer)
 	if GameManager.player_weapon_changer:
 		weapon = GameManager.weapons[HandBag.player_items['weapon']]
 		ammunition = weapon['attribute']['ammunition']
@@ -33,13 +31,15 @@ func _process(delta):
 		
 	#atualizando tempo de ataque
 	attaking_cooldown += delta
-	if ammunition <= 0:
-		animation.play(str(HandBag.player_items['weapon']+"_descarregada"))
-		if attaking_cooldown > weapon['attribute']['recharge_cooldown']:
+	if ammunition == 0:
+		if attaking_cooldown >= weapon['attribute']['recharge_cooldown']:
 			is_attaking = false
 			attaking_cooldown = 0
 			animation.play(str(HandBag.player_items['weapon']))
 			ammunition = weapon['attribute']['ammunition']
+		else:
+			if animation.get_current_animation() != HandBag.player_items['weapon']+"_descarregada":
+				animation.play(str(HandBag.player_items['weapon']+"_descarregada"))
 	else:
 		if attaking_cooldown > weapon['attribute']['attaking_cooldown']:
 			is_attaking = false
@@ -60,8 +60,10 @@ func spawn_bullet() -> void:
 func animate(attack_direction, direction):
 	if attack_direction.x > 0:
 		texture.flip_v = false
-		texture.position = Vector2(5.426, 0.5)
+		texture.position.x = 4.5
+		texture.position.y = -5
 	elif attack_direction.x < 0:
 		texture.flip_v = true
-		texture.position = Vector2(6.42, 10.00)
+		texture.position.x = 4.5
+		texture.position.y = 5
 	look_at(direction)

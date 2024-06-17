@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6gjnq2xbixmw"
-path="res://.godot/imported/dead.png-85684b143bd544ff787fbe73b442ff38.ctex"
+uid="uid://csjgmqkcs8dg3"
+path="res://.godot/imported/rolamento_cima.png-f4c20b19ac6affa6e64dc7cc23833ac2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/animation/player/dead.png"
-dest_files=["res://.godot/imported/dead.png-85684b143bd544ff787fbe73b442ff38.ctex"]
+source_file="res://assents/animation/player/rolamento_cima.png"
+dest_files=["res://.godot/imported/rolamento_cima.png-f4c20b19ac6affa6e64dc7cc23833ac2.ctex"]
 
 [params]
 

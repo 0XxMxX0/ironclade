@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drvh6opmn5hep"
-path="res://.godot/imported/robozin_run.png-b6f5539230616e531c737aa429069be8.ctex"
+uid="uid://d2ry2v6xp0r5x"
+path="res://.godot/imported/dano_diagonal.png-88198fae5cb3c20fda10cbfbf4b1b07f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/animation/player/robozin_run.png"
-dest_files=["res://.godot/imported/robozin_run.png-b6f5539230616e531c737aa429069be8.ctex"]
+source_file="res://assents/animation/player/dano_diagonal.png"
+dest_files=["res://.godot/imported/dano_diagonal.png-88198fae5cb3c20fda10cbfbf4b1b07f.ctex"]
 
 [params]
 

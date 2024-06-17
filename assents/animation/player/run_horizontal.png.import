@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhqkxqodq8jq4"
-path="res://.godot/imported/rolamento.png-bddf181bc85b29f8958715c9e53acb59.ctex"
+uid="uid://gt7p4cjpf5yf"
+path="res://.godot/imported/run_horizontal.png-57d1886d6c8a3d381df09a8f3e86bba1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/animation/player/rolamento.png"
-dest_files=["res://.godot/imported/rolamento.png-bddf181bc85b29f8958715c9e53acb59.ctex"]
+source_file="res://assents/animation/player/run_horizontal.png"
+dest_files=["res://.godot/imported/run_horizontal.png-57d1886d6c8a3d381df09a8f3e86bba1.ctex"]
 
 [params]
 

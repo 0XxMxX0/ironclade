@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daabrtkghkj6r"
-path="res://.godot/imported/Rifle.png-6b2916363f346127585cb9956e800c9b.ctex"
+uid="uid://n2eq2755j1hj"
+path="res://.godot/imported/dano_top.png-da6195e7d7fb635aeb1da70d726af981.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/power_ups/Rifle.png"
-dest_files=["res://.godot/imported/Rifle.png-6b2916363f346127585cb9956e800c9b.ctex"]
+source_file="res://assents/animation/player/dano_top.png"
+dest_files=["res://.godot/imported/dano_top.png-da6195e7d7fb635aeb1da70d726af981.ctex"]
 
 [params]
 
