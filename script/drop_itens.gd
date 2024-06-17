@@ -3,33 +3,30 @@ extends Area2D
 var power_up
 
 func _ready():
-	
-	#Chance de randomizar o item
-	var random_int = randi_range(1,4)
-	
 	#Gera o POWER UP
-	#$texture_drop_itens.set_texture(preload())
+	power_up = generete_power_up()
+	$texture_drop_itens.set_texture(load(power_up['sprite']))
 	
 #func _process(delta):
 	#if GameManager.drop_1_colected:
 		#queue_free()
 
-func generete_power_up(random_int) -> String:
+func generete_power_up():
 	#Chances de aparecer cada item
-	# - Rifle 50% de chance
-	if random_int < 0:
-		return 'rifle'
-	else:
-		return 'velocidade'
+	var random_number = randf()
+	var soma_probabilidades = 0.0
 	
+	for power_up in GameManager.power_ups:
+		soma_probabilidades += GameManager.power_ups[power_up]['probability']
+		if random_number < soma_probabilidades:
+			return GameManager.power_ups[power_up]
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		if power_up['category'] == 'weapon':
-			GameManager.player_weapon_changer = power_up['name']
-			
+			HandBag.player_items['weapon'] = power_up['name']
+			GameManager.player_weapon_changer = true
 		elif power_up['category'] == 'attribute':
-			print(len(HandBag.player_items['up']))
 			if len(HandBag.player_items['up']) == 0:
 				HandBag.player_items['up'].append({'att': power_up['name']})
 			else:

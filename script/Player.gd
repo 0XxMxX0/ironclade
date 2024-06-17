@@ -19,6 +19,11 @@ var is_receive_damage = false
 #Propriedades do braço
 @onready var hand: Node2D = $Hand
 
+#Animation
+@onready var animation: AnimationPlayer = $animation
+#Sprite
+@onready var sprite: Sprite2D = $texture
+
 func _process(delta) -> void:
 	#Passando informações globais do player
 	GameManager.player = self
@@ -48,7 +53,7 @@ func read_input() -> void:
 	if GameManager.game_over: return
 	
 	if Input.is_action_just_pressed("dodge"):
-		$animation.play("dodge")
+		animation.play("dodge")
 		input_vector = get_direction_mouse()
 		GameManager.player_is_dodging = true
 	
@@ -66,33 +71,33 @@ func play_run_idle_animation() -> void:
 	if was_running != is_running:
 		if is_running:
 			if input_vector.y < 0:
-				$animation.play("run_top")
+				animation.play("run_top")
 				is_running = false
 			elif input_vector.y > 0:
-				$animation.play("run_down")
+				animation.play("run_down")
 				is_running = false
 			else:
-				$animation.play("run")
+				animation.play("run")
 				is_running = false
 		else:
 			is_running = false
-			$animation.play('idle')
+			animation.play('idle')
 	else:
 		if not GameManager.player_is_dodging:
-			$animation.play('idle')
+			animation.play('idle')
 			input_vector = Vector2.ZERO
 
 func rotate_sprite() -> void:
 	if GameManager.game_over: return
 	#Girando o sprite de acordo com o mouse
 	if get_direction_mouse().x > 0:
-		$texture.flip_h = false
-		$texture.position.x = 2.325
-		%weapon_barrel.position.y = 0.388
+		sprite.flip_h = false
+		sprite.position.x = 2.325
+		%gun_barrel.position.y = 0.388
 	elif get_direction_mouse().x < 0:
-		$texture.flip_h = true
-		$texture.position.x = -3.617
-		%weapon_barrel.position.y = -1
+		sprite.flip_h = true
+		sprite.position.x = -3.617
+		%gun_barrel.position.y = -1
 
 func damage(value) -> void:
 	if GameManager.game_over: return
@@ -101,7 +106,7 @@ func damage(value) -> void:
 	GameManager.player_is_dodging = false
 	
 	health -= value
-	$animation.play("hit")
+	animation.play("hit")
 	if health <= 0:
 		die()
 	print("Jogador recebeu ",value," de dano e ficou com ",health," de vida")
@@ -109,7 +114,7 @@ func damage(value) -> void:
 func die() -> void:
 	GameManager.game_over = true
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
-	$animation.play("dead")
+	animation.play("dead")
 
 #Pegando a posição do mouse
 func get_direction_mouse() -> Vector2:
