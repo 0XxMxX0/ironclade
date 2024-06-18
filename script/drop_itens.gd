@@ -1,16 +1,28 @@
 extends Area2D
 
 var power_up
+var position_init_y
+var position_y_max = false
 
 func _ready():
 	#Gera o POWER UP
 	power_up = generete_power_up()
 	$texture_drop_itens.set_texture(load(power_up['sprite']))
+	position_init_y = position.y
 	
-#func _process(delta):
-	#if GameManager.drop_1_colected:
-		#queue_free()
-
+func _process(delta):
+	
+	#Codigo para animar o power-up
+	if position.y >= position_init_y + 8 and not position_y_max:
+		position_y_max = true
+	elif position.y <= position_init_y and position_y_max:
+		position_y_max = false
+	else:
+		if position.y < position_init_y + 8 and not position_y_max:
+			position.y += 0.2
+		elif position.y > position_init_y and position_y_max:
+			position.y -= 0.2
+			
 func generete_power_up():
 	#Chances de aparecer cada item
 	var random_number = randf()
@@ -34,11 +46,8 @@ func _on_body_entered(body):
 					if attribute['att'] != power_up['name']:
 						HandBag.player_items['up'].append({'att': power_up['name']})
 		
-		#$drop.play(0.0)
-		#$drop.autoplay = true
-		#GameManager.door_2_open = true
-		#GameManager.drop_1_colected = true
-#
-#func _on_body_exited(body):
+		$drop.play(0.0)
+		$drop.autoplay = true
+func _on_body_exited(body):
 	#pass
-	##queue_free()
+	queue_free()

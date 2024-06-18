@@ -3,7 +3,6 @@ extends Node
 #Paramentos gerais do player
 @onready var player_position: Vector2
 @onready var player
-var player_is_dodging = false
 
 #Paramentros gerais do jogo
 var game_over = false
@@ -20,7 +19,7 @@ var power_ups = {
 	"velocity" :{
 		"name": "velocity",
 		"sprite": "res://assents/power_ups/velocidade.png",
-		"probability": 0.1,
+		"probability": 0.5,
 		"attribute": {
 			"attribute": "speed",
 			"value": 2
@@ -30,7 +29,14 @@ var power_ups = {
 	"rifle" :{
 		"name": "rifle",
 		"sprite": "res://assents/power_ups/rifle.png",
-		"probability": 0.9,
+		"probability": 0.3,
+		"attribute": {},
+		"category": "weapon"
+	},
+	"metralhadora" :{
+		"name": "metralhadora",
+		"sprite": "res://assents/power_ups/metralhadora.png",
+		"probability": 0.2,
 		"attribute": {},
 		"category": "weapon"
 	}
@@ -40,10 +46,6 @@ var power_ups = {
 var player_weapon_changer: bool = false
 var weapons = {
 	"pistola":{
-		"sprites": {
-			"skin_pattern": "res://assents/weapons/pistola.png",
-			"skin_second": "res://assents/weapons/pistola_descarregada.png",
-		},
 		"attribute":{
 			"attaking_cooldown" : 0.8,
 			"recharge_cooldown" : 1.5,
@@ -52,15 +54,19 @@ var weapons = {
 		}
 	},
 	"rifle":{
-		"sprites": {
-			"skin_pattern": "res://assents/weapons/rifle.png",
-			"skin_second": "res://assents/weapons/Rifle_descarregada.png",
-		},
 		"attribute":{
 			"attaking_cooldown" : 2.5,
 			"recharge_cooldown" : 2.5,
 			"damage": 5,
 			"ammunition": 1
+		}
+	},
+	"metralhadora":{
+		"attribute":{
+			"attaking_cooldown" : 0.1,
+			"recharge_cooldown" : 1.0,
+			"damage": 3,
+			"ammunition": 10
 		}
 	}
 }

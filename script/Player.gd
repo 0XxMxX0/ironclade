@@ -8,6 +8,7 @@ var speed: float = 1.5
 #Propriedades de movimentação
 var input_vector: Vector2 = Vector2.ZERO
 var direction_player
+var is_dodging = false
 
 ##Propriedades de corrida
 var is_running: bool = false
@@ -54,12 +55,21 @@ func read_input() -> void:
 	if GameManager.game_over: return
 	
 	if Input.is_action_just_pressed("dodge") and input_vector != Vector2(0,0):
-		animation.play("dodge")
-		GameManager.player_is_dodging = true
+		is_dodging = true
+		if input_vector.y < 0:
+			animation.play("dodge_top")
+			is_running = false
+		elif input_vector.y > 0:
+			animation.play("dodge_down")
+			is_running = false
+		else:
+			animation.play("dodge_horizontal")
+			is_running = false
+		
 	
 	#print(GameManager.player_is_dodging)
 	
-	if not GameManager.player_is_dodging:	
+	if not is_dodging:	
 		#Capta a direção
 		input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down", 0.15)
 		
@@ -83,7 +93,7 @@ func play_run_idle_animation() -> void:
 			is_running = false
 			animation.play('idle')
 	else:
-		if not GameManager.player_is_dodging:
+		if not is_dodging:
 			animation.play('idle')
 			input_vector = Vector2.ZERO
 
@@ -107,7 +117,7 @@ func damage(value) -> void:
 	if GameManager.game_over: return
 	
 	is_receive_damage = true
-	GameManager.player_is_dodging = false
+	is_dodging = false
 	
 	health -= value
 	animation.play("hit")
@@ -128,7 +138,7 @@ func get_mouse_position() -> Vector2:
 	return get_global_mouse_position()
 	
 func player_dodge_not():
-	GameManager.player_is_dodging = false
+	is_dodging = false
 	
 func player_receive_damage():
 	is_receive_damage = false

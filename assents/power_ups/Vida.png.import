@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6i1xk878e3d6"
-path="res://.godot/imported/metralhadora.png-d55af8453e27f1455956205a99b9ede0.ctex"
+uid="uid://cikdhm0pu2hlb"
+path="res://.godot/imported/Vida.png-23035ec456fc0a3e4d2d1efe33e255fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/weapons/metralhadora.png"
-dest_files=["res://.godot/imported/metralhadora.png-d55af8453e27f1455956205a99b9ede0.ctex"]
+source_file="res://assents/power_ups/Vida.png"
+dest_files=["res://.godot/imported/Vida.png-23035ec456fc0a3e4d2d1efe33e255fd.ctex"]
 
 [params]
 
